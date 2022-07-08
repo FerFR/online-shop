@@ -12,6 +12,7 @@ import CartModal from './CartModal';
 import useUpdate from '../../hooks/useUpdate';
 import useBodyScroll from '../../hooks/useBodyScroll';
 import HeaderDesktop from './HeaderDesktop';
+import { useLocation } from 'react-router-dom';
 
 const Sticky = styled.div`
     position: sticky;
@@ -59,7 +60,7 @@ const Header = () => {
     const [menu, toggleMenu] = useToggle<boolean, boolean>(false, true);
     const [cart, toggleCart] = useToggle<boolean, boolean>(false, true);
     const [enableScroll, disableScroll] = useBodyScroll();
-
+    const location = useLocation();
     useUpdate(() => {
         if (cart || menu) {
             disableScroll();
@@ -67,6 +68,9 @@ const Header = () => {
             enableScroll();
         }
     }, [cart, menu]);
+    useUpdate(() => {
+        enableScroll();
+    }, [location.pathname]);
 
     return (
         <Sticky>
