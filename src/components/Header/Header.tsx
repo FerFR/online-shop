@@ -61,6 +61,9 @@ const Header = () => {
     const [cart, toggleCart] = useToggle<boolean, boolean>(false, true);
     const [enableScroll, disableScroll] = useBodyScroll();
     const location = useLocation();
+    React.useEffect(() => {
+        enableScroll();
+    }, [location]);
     useUpdate(() => {
         if (cart || menu) {
             disableScroll();
@@ -68,9 +71,6 @@ const Header = () => {
             enableScroll();
         }
     }, [cart, menu]);
-    useUpdate(() => {
-        enableScroll();
-    }, [location.pathname]);
 
     return (
         <Sticky>
