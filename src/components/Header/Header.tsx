@@ -13,6 +13,10 @@ import useUpdate from '../../hooks/useUpdate';
 import useBodyScroll from '../../hooks/useBodyScroll';
 import HeaderDesktop from './HeaderDesktop';
 import { useLocation } from 'react-router-dom';
+import { useQuery } from 'react-query';
+import { categoriesQuery } from '../../queries';
+import { useDispatch } from 'react-redux';
+import { setCategories } from '../../store/categorySlice';
 
 const Sticky = styled.div`
     position: sticky;
@@ -61,6 +65,20 @@ const Header = () => {
     const [cart, toggleCart] = useToggle<boolean, boolean>(false, true);
     const [enableScroll, disableScroll] = useBodyScroll();
     const location = useLocation();
+    const { data, isLoading, isError } = useQuery(
+        'categories',
+        categoriesQuery,
+        {
+            cacheTime: 200,
+        }
+    );
+    const dispatch = useDispatch();
+    useUpdate(() => {
+        if (!isError) {
+            dispatch(setCategories(data));
+        }
+    }, [isLoading]);
+
     React.useEffect(() => {
         enableScroll();
     }, [location]);

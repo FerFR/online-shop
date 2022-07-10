@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Slider from '@mui/material/Slider';
+import { RootState } from '../../store';
+import { ICategories } from '../../types';
+import { useSelector } from 'react-redux';
 
 const Container = styled.aside`
     width: min(100%, 400px);
@@ -30,25 +33,36 @@ const Select = styled.select`
     width: min(90%, 300px);
 `;
 const Filters = () => {
-    const [priceValue, setPriceValue] = React.useState<number[] | number>([
-        10, 100,
-    ]);
+    const categories = useSelector<RootState, ICategories>(
+        (state) => state.category.categories
+    );
+    const handleChange = (event: Event, newValue: number | number[]) => {
+        setPriceValue(newValue as number);
+    };
+    const [priceValue, setPriceValue] = React.useState<number>(100);
     return (
         <Container>
             <Filter>
                 <Title>Filtre por Categoria</Title>
                 <Select>
-                    <option value="Categorias">Categorias</option>
+                    <option value="null">Categorias</option>;
+                    {categories.map((category) => {
+                        return (
+                            <option key={category.id} value={category.id}>
+                                {category.name}
+                            </option>
+                        );
+                    })}
                 </Select>
             </Filter>
             <Filter>
                 <Title>Filtre por Preço</Title>
                 <Slider
-                    getAriaLabel={() => 'Preço'}
-                    value={priceValue}
-                    onChange={(e, value) => setPriceValue(value)}
+                    aria-label="Default"
                     valueLabelDisplay="auto"
-                    getAriaValueText={(value) => `R$${value}`}
+                    value={priceValue}
+                    onChange={handleChange}
+                    max={300}
                 />
             </Filter>
         </Container>

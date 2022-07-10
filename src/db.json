@@ -1,0 +1,243 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "SQR P18 Smart Watch Feminino 1.6 Inch 2021 Full Touch",
+            "price": "R$250,00",
+            "images": [
+                "/images/products/prod1-1.webp",
+                "/images/products/prod1-2.webp",
+                "/images/products/prod1-3.webp"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Mini Air Dots sem fio colorido",
+            "price": "R$100,00",
+            "images": [
+                "/images/products/prod2-1.webp",
+                "/images/products/prod2-2.webp",
+                "/images/products/prod2-3.webp",
+                "/images/products/prod2-4.webp"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Xiaomi Redmi Airdots S Airdots 2 Fone Bluetooth",
+            "price": "R$150,00",
+            "images": [
+                "/images/products/prod3-1.webp",
+                "/images/products/prod3-2.webp",
+                "/images/products/prod3-3.webp"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "SQR P18 Smart Watch Feminino 1.6 Inch 2021 Full Touch",
+            "price": "R$250,00",
+            "images": [
+                "/images/products/prod1-1.webp",
+                "/images/products/prod1-2.webp",
+                "/images/products/prod1-3.webp"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Mini Air Dots sem fio colorido",
+            "price": "R$100,00",
+            "images": [
+                "/images/products/prod2-1.webp",
+                "/images/products/prod2-2.webp",
+                "/images/products/prod2-3.webp",
+                "/images/products/prod2-4.webp"
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Xiaomi Redmi Airdots S Airdots 2 Fone Bluetooth",
+            "price": "R$150,00",
+            "images": [
+                "/images/products/prod3-1.webp",
+                "/images/products/prod3-2.webp",
+                "/images/products/prod3-3.webp"
+            ]
+        },
+        {
+            "id": 7,
+            "title": "SQR P18 Smart Watch Feminino 1.6 Inch 2021 Full Touch",
+            "price": "R$250,00",
+            "images": [
+                "/images/products/prod1-1.webp",
+                "/images/products/prod1-2.webp",
+                "/images/products/prod1-3.webp"
+            ]
+        },
+        {
+            "id": 8,
+            "title": "Mini Air Dots sem fio colorido",
+            "price": "R$100,00",
+            "images": [
+                "/images/products/prod2-1.webp",
+                "/images/products/prod2-2.webp",
+                "/images/products/prod2-3.webp",
+                "/images/products/prod2-4.webp"
+            ]
+        },
+        {
+            "id": 9,
+            "title": "Xiaomi Redmi Airdots S Airdots 2 Fone Bluetooth",
+            "price": "R$150,00",
+            "images": [
+                "/images/products/prod3-1.webp",
+                "/images/products/prod3-2.webp",
+                "/images/products/prod3-3.webp"
+            ]
+        },
+        {
+            "id": 10,
+            "title": "SQR P18 Smart Watch Feminino 1.6 Inch 2021 Full Touch",
+            "price": "R$250,00",
+            "images": [
+                "/images/products/prod1-1.webp",
+                "/images/products/prod1-2.webp",
+                "/images/products/prod1-3.webp"
+            ]
+        },
+        {
+            "id": 11,
+            "title": "Mini Air Dots sem fio colorido",
+            "price": "R$100,00",
+            "images": [
+                "/images/products/prod2-1.webp",
+                "/images/products/prod2-2.webp",
+                "/images/products/prod2-3.webp",
+                "/images/products/prod2-4.webp"
+            ]
+        },
+        {
+            "id": 12,
+            "title": "Xiaomi Redmi Airdots S Airdots 2 Fone Bluetooth",
+            "price": "R$150,00",
+            "images": [
+                "/images/products/prod3-1.webp",
+                "/images/products/prod3-2.webp",
+                "/images/products/prod3-3.webp"
+            ]
+        },
+        {
+            "id": 13,
+            "title": "SQR P18 Smart Watch Feminino 1.6 Inch 2021 Full Touch",
+            "price": "R$250,00",
+            "images": [
+                "/images/products/prod1-1.webp",
+                "/images/products/prod1-2.webp",
+                "/images/products/prod1-3.webp"
+            ]
+        },
+        {
+            "id": 14,
+            "title": "Mini Air Dots sem fio colorido",
+            "price": "R$100,00",
+            "images": [
+                "/images/products/prod2-1.webp",
+                "/images/products/prod2-2.webp",
+                "/images/products/prod2-3.webp",
+                "/images/products/prod2-4.webp"
+            ]
+        },
+        {
+            "id": 15,
+            "title": "Xiaomi Redmi Airdots S Airdots 2 Fone Bluetooth",
+            "price": "R$150,00",
+            "images": [
+                "/images/products/prod3-1.webp",
+                "/images/products/prod3-2.webp",
+                "/images/products/prod3-3.webp"
+            ]
+        },
+        {
+            "id": 16,
+            "title": "SQR P18 Smart Watch Feminino 1.6 Inch 2021 Full Touch",
+            "price": "R$250,00",
+            "images": [
+                "/images/products/prod1-1.webp",
+                "/images/products/prod1-2.webp",
+                "/images/products/prod1-3.webp"
+            ]
+        },
+        {
+            "id": 17,
+            "title": "Mini Air Dots sem fio colorido",
+            "price": "R$100,00",
+            "images": [
+                "/images/products/prod2-1.webp",
+                "/images/products/prod2-2.webp",
+                "/images/products/prod2-3.webp",
+                "/images/products/prod2-4.webp"
+            ]
+        },
+        {
+            "id": 18,
+            "title": "Xiaomi Redmi Airdots S Airdots 2 Fone Bluetooth",
+            "price": "R$150,00",
+            "images": [
+                "/images/products/prod3-1.webp",
+                "/images/products/prod3-2.webp",
+                "/images/products/prod3-3.webp"
+            ]
+        },
+        {
+            "id": 19,
+            "title": "SQR P18 Smart Watch Feminino 1.6 Inch 2021 Full Touch",
+            "price": "R$250,00",
+            "images": [
+                "/images/products/prod1-1.webp",
+                "/images/products/prod1-2.webp",
+                "/images/products/prod1-3.webp"
+            ]
+        },
+        {
+            "id": 20,
+            "title": "Mini Air Dots sem fio colorido",
+            "price": "R$100,00",
+            "images": [
+                "/images/products/prod2-1.webp",
+                "/images/products/prod2-2.webp",
+                "/images/products/prod2-3.webp",
+                "/images/products/prod2-4.webp"
+            ]
+        },
+        {
+            "id": 21,
+            "title": "Xiaomi Redmi Airdots S Airdots 2 Fone Bluetooth",
+            "price": "R$150,00",
+            "images": [
+                "/images/products/prod3-1.webp",
+                "/images/products/prod3-2.webp",
+                "/images/products/prod3-3.webp"
+            ]
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "Airdots",
+            "image": "/images/categories/airpods.webp"
+        },
+        {
+            "id": 2,
+            "name": "Fone de Ouvido",
+            "image": "/images/categories/fones-de-ouvido.webp"
+        },
+        {
+            "id": 3,
+            "name": "Smart Watch",
+            "image": "/images/categories/watch.webp"
+        },
+        {
+            "id": 4,
+            "name": "Apple Watch",
+            "image": "/images/categories/watch2.webp"
+        }
+    ]
+}

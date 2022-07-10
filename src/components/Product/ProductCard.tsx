@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import Link from '../../shared/Link';
 
 const Container = styled.div`
     width: min(100%, 256px);
@@ -40,14 +41,21 @@ const Button = styled.button`
     }
 `;
 
-const ProductCard = () => {
+interface Props {
+    id: number;
+    title: string;
+    image: string;
+    price: string;
+}
+
+const ProductCard = ({ id, title, image, price }: Props) => {
     return (
         <Container>
-            <Image src="https://onlineshopacessorios.com/wp-content/uploads/2021/07/H1647dc028f144ecab95f907a6a6dfbe2K.jpg_960x960-300x300.jpg" />
-            <Name>
-                SQR P18 Smart Watch Feminino 1.6 Inch 2021 Full Touch (cópia)
-            </Name>
-            <Price>R$250,00</Price>
+            <Link to={'/produto/' + id}>
+                <Image src={image} />
+            </Link>
+            <Name>{title}</Name>
+            <Price>{price}</Price>
             <Button>
                 <ShoppingBasketIcon />
                 Comprar

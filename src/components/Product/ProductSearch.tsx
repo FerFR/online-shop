@@ -1,36 +1,38 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import ProductCard from './ProductCard';
-import Pagination from '@mui/material/Pagination';
 import Grid from '../../shared/Grid';
+import { RootState } from '../../store';
+import { IProducts } from '../../types';
+import { useSelector } from 'react-redux';
 
 const Container = styled.div`
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 30px;
     margin: 30px 0;
     width: min(100%, 800px);
 `;
 
 const ProductSearch = () => {
+    const products = useSelector<RootState, IProducts>(
+        (state) => state.product.products
+    );
+
     return (
         <Container>
             <Grid>
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
+                {products.map((product) => {
+                    return (
+                        <ProductCard
+                            key={product.id}
+                            id={product.id}
+                            image={product.images[0]}
+                            price={product.price}
+                            title={product.title}
+                        />
+                    );
+                })}
             </Grid>
-            <Pagination count={5} variant="outlined" shape="rounded" />
         </Container>
     );
 };

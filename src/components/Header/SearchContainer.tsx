@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import SearchIcon from '@mui/icons-material/Search';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
     display: flex;
@@ -29,10 +30,18 @@ const Button = styled.button`
 `;
 
 const SearchContainer = () => {
+    const [value, setValue] = React.useState('');
+    const handleSubmit = () => {
+        window.location.href = `/buscar?q=${value}`;
+    };
     return (
         <Container>
-            <Input placeholder="O que você procura ?" />
-            <Button>
+            <Input
+                placeholder="O que você procura ?"
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+            />
+            <Button onClick={handleSubmit}>
                 <SearchIcon />
             </Button>
         </Container>

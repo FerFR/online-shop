@@ -5,6 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import Badge from '@mui/material/Badge';
+import { useNavigate } from 'react-router-dom';
 const Container = styled.header`
     width: 100%;
     background-color: var(--main-color);
@@ -91,6 +92,11 @@ interface Props {
 }
 
 const HeaderDesktop = ({ toggleCart }: Props) => {
+    const [value, setValue] = React.useState('');
+    const handleSubmit = () => {
+        window.location.href = `/buscar?q=${value}`;
+    };
+
     return (
         <Container>
             <Content>
@@ -100,8 +106,12 @@ const HeaderDesktop = ({ toggleCart }: Props) => {
                             <Logo src="/images/logo.webp" />
                         </Link>
                         <Search>
-                            <Input placeholder="O que você procura?" />
-                            <SearchButton>
+                            <Input
+                                placeholder="O que você procura?"
+                                value={value}
+                                onChange={(e) => setValue(e.target.value)}
+                            />
+                            <SearchButton onClick={handleSubmit}>
                                 <SearchIcon />
                             </SearchButton>
                         </Search>

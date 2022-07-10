@@ -1,8 +1,14 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../hoc/Layout';
 import Filters from '../components/Filters/Filters';
 import ProductSearch from '../components/Product/ProductSearch';
+import { useQuery } from 'react-query';
+import { searchQuery } from '../queries';
+import useUpdate from '../hooks/useUpdate';
+import { useDispatch } from 'react-redux';
+import { setProducts } from '../store/productSlice';
+import { useSearchParams } from 'react-router-dom';
 
 const Container = styled.div`
     width: 100%;
@@ -30,6 +36,26 @@ const ImageDesktop = styled.img`
 `;
 
 const Search = () => {
+    const [searchParams] = useSearchParams();
+    const [params, setParamas] = useState({
+        search: searchParams.get('q'),
+    });
+    const [pagination, setPagination] = React.useState({
+        page: 1,
+        limit: 12,
+    });
+
+    const dispatch = useDispatch();
+    const { data, isLoading, isError } = useQuery(
+        ['search', { ...params, ...pagination }],
+        searchQuery
+    );
+
+    useUpdate(() => {
+        if (!isError) {
+            dispatch(setProducts(data));
+        }
+    }, [isLoading]);
     return (
         <Container>
             <Image src="https://onlineshopacessorios.com/wp-content/uploads/2021/07/banner-mobile-10-online-shop.png" />

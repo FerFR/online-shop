@@ -12,6 +12,9 @@ import GppGoodIcon from '@mui/icons-material/GppGood';
 import ReplyIcon from '@mui/icons-material/Reply';
 import LockIcon from '@mui/icons-material/Lock';
 import PhoneIcon from '@mui/icons-material/Phone';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store';
+import { ICategories } from '../../types';
 
 interface Props {
     open: boolean;
@@ -162,6 +165,10 @@ const LinkIcon = styled.span`
 const Label = styled.h3``;
 
 const MenuModal = ({ open, toggle }: Props) => {
+    const categories = useSelector<RootState, ICategories>(
+        (state) => state.category.categories
+    );
+
     return (
         <Container open={open}>
             <Blackscreen className="blackscreen" onClick={toggle} />
@@ -187,38 +194,39 @@ const MenuModal = ({ open, toggle }: Props) => {
                                 Home
                             </BottomItem>
                         </Link>
-                        <BottomItem>
-                            <InboxIcon />
-                            Meus Pedidos
-                        </BottomItem>
+                        <Link to="/minha-conta">
+                            <BottomItem>
+                                <InboxIcon />
+                                Meus Pedidos
+                            </BottomItem>
+                        </Link>
                     </HeaderBottom>
                 </Header>
                 <Content>
                     <List>
+                        {categories.map((category) => {
+                            return (
+                                <Link
+                                    key={category.id}
+                                    to={'/buscar?category=' + category.id}
+                                >
+                                    <CategoryItem>
+                                        <CategoryItemImage
+                                            src={category.image}
+                                        />
+                                        {category.name}
+                                    </CategoryItem>
+                                </Link>
+                            );
+                        })}
                         <Link to="/buscar">
-                            <CategoryItem>
-                                <CategoryItemImage src="/images/airpods.webp" />
-                                Airdots
-                            </CategoryItem>
+                            <CategoryButton>
+                                Ver todos os produtos
+                                <CategoryButtonIcon>
+                                    <ArrowForwardIosIcon />
+                                </CategoryButtonIcon>
+                            </CategoryButton>
                         </Link>
-                        <CategoryItem>
-                            <CategoryItemImage src="/images/fones-de-ouvido.webp" />
-                            Fone de Ouvido
-                        </CategoryItem>
-                        <CategoryItem>
-                            <CategoryItemImage src="/images/watch.webp" />
-                            Smart Watch
-                        </CategoryItem>
-                        <CategoryItem>
-                            <CategoryItemImage src="/images/watch2.webp" />
-                            Apple Watch
-                        </CategoryItem>
-                        <CategoryButton>
-                            Ver todos os produtos
-                            <CategoryButtonIcon>
-                                <ArrowForwardIosIcon />
-                            </CategoryButtonIcon>
-                        </CategoryButton>
                     </List>
                     <Label>Institucional</Label>
                     <List>

@@ -1,5 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { ICategories } from '../../types';
+import { RootState } from '../../store';
+import { useSelector } from 'react-redux';
+import Link from '../../shared/Link';
 
 const Container = styled.div`
     display: flex;
@@ -13,11 +17,16 @@ const Container = styled.div`
     }
 `;
 const Card = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 15px;
+    display: grid;
+    place-items: center;
+    a {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        display: flex;
+        gap: 15px;
+    }
     background-color: #fff;
     border-bottom: 0px solid var(--main-color);
     border: 1px solid #eee;
@@ -37,24 +46,22 @@ const Image = styled.img`
 const Text = styled.span``;
 
 const Category = () => {
+    const categories = useSelector<RootState, ICategories>(
+        (state) => state.category.categories
+    );
+
     return (
         <Container>
-            <Card>
-                <Image src="/images/airpods.webp" />
-                <Text>Airdots</Text>
-            </Card>
-            <Card>
-                <Image src="/images/fones-de-ouvido.webp" />
-                <Text>Fones de Ouvido</Text>
-            </Card>
-            <Card>
-                <Image src="/images/watch.webp" />
-                <Text>Smart Watch</Text>
-            </Card>
-            <Card>
-                <Image src="/images/watch2.webp" />
-                <Text>Apple Watch</Text>
-            </Card>
+            {categories.map((category) => {
+                return (
+                    <Card key={category.id}>
+                        <Link to={'/buscar?category=' + category.id}>
+                            <Image src={category.image} />
+                            <Text>{category.name}</Text>
+                        </Link>
+                    </Card>
+                );
+            })}
         </Container>
     );
 };
