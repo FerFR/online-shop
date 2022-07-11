@@ -67,7 +67,7 @@ const Product = () => {
         <Container>
             {!isError && !isLoading ? (
                 <>
-                    <ProductImages images={data?.images} />
+                    <ProductImages images={data!.images} />
                     <Content>
                         <Title>{data?.title}</Title>
                         <Price>{data?.price}</Price>
