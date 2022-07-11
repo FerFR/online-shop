@@ -28,7 +28,10 @@ const Icon = styled.img`
     }
 `;
 
-const ProductImages = () => {
+interface Props {
+    images: string[];
+}
+const ProductImages = ({ images }: Props) => {
     const handleClick = (e: React.MouseEvent<HTMLImageElement>) => {
         const principalImage = document.getElementById('principal-image');
         const src = e.currentTarget.getAttribute('src');
@@ -41,32 +44,22 @@ const ProductImages = () => {
 
     return (
         <Container>
-            <Image
-                id="principal-image"
-                src="https://onlineshopacessorios.com/wp-content/uploads/2021/07/H265c6040212b43a78db065e8b8de0bbdO.jpg"
-            />
+            <Image id="principal-image" src={images[0]} />
             <Inline id="images-inline">
                 <Icon
                     className="active"
-                    src="https://onlineshopacessorios.com/wp-content/uploads/2021/07/H265c6040212b43a78db065e8b8de0bbdO.jpg"
+                    src={images[0]}
                     onClick={handleClick}
                 />
-                <Icon
-                    onClick={handleClick}
-                    src="https://onlineshopacessorios.com/wp-content/uploads/2021/07/H4f34da9dae01481e992a47b87b3d604ci.jpg"
-                />
-                <Icon
-                    onClick={handleClick}
-                    src="https://onlineshopacessorios.com/wp-content/uploads/2021/07/H21d1f48d8a67446c9c3f1f6482cb5dbc5.jpg"
-                />
-                <Icon
-                    onClick={handleClick}
-                    src="https://onlineshopacessorios.com/wp-content/uploads/2021/07/Hf088ea552dfd4ca9b0d90658d9f59318A.jpg"
-                />
-                <Icon
-                    onClick={handleClick}
-                    src="https://onlineshopacessorios.com/wp-content/uploads/2021/07/Hf088ea552dfd4ca9b0d90658d9f59318A.jpg"
-                />
+                {images
+                    .filter((image) => {
+                        if (images[0] !== image) {
+                            return image;
+                        }
+                    })
+                    .map((image) => {
+                        return <Icon src={image} onClick={handleClick} />;
+                    })}
             </Inline>
         </Container>
     );

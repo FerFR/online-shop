@@ -20,3 +20,9 @@ export const searchQuery = async ({ queryKey }: any) => {
         return data;
     }
 };
+
+export const productQuery = async ({ queryKey }: any) => {
+    const [_key, { id }] = queryKey;
+    const { data } = await api.get('/products/' + id);
+    return data;
+};
